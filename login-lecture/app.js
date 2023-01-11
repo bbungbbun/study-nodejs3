@@ -1,38 +1,19 @@
+"use strict";
+
+// 모듈
 const express = require('express');
 const app = express();
 
-app.get("/", (req, res)=>{
-    res.send(`
-    <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        여기는 루트
-    </body>
-    </html>`)
-});
-app.get("/login", (req, res)=>{
-    res.send(`
-    <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <input type="text" placeholder="아이디"><br>
-        <input type="text" placeholder="비밀번호"><br>
-        <button>로그인</button>
-    </body>
-    </html>`)
-});
-app.listen(3000, function(){
-    console.log('hi');
+const PORT = 3000;
+
+// 라우팅
+const home = require("./routes/home");
+
+app.set("views", "./views");
+app.set("view engine", "ejs");
+
+app.use("/", home); // use -> 미들웨어를 등록해주는 메소드
+
+app.listen(PORT, function(){
+    console.log('서버가동');
 });
