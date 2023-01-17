@@ -17,6 +17,10 @@ const process = {
     const response = user.login();
     return res.json(response);
   },
+
+  register: (req, res) => {
+    res.render("home/register");
+  },
 };
 module.exports = {
   output,
