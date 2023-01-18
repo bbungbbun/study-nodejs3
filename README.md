@@ -6,3 +6,4 @@
 ## 필기 바로가기
 - [20230111 nodejs](https://github.com/bbungbbun/study-nodejs3/blob/master/text/20230111%20nodejs.md)
 - [20230117 nodejs](https://github.com/bbungbbun/study-nodejs3/blob/master/text/20230117%20nodejs.md)
+- [20230118 nodejs]()
