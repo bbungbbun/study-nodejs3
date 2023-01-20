@@ -26,6 +26,16 @@ class User {
       return { success: false, msg: err };
     }
   }
+
+  async fileUpload(){
+    const client = this.body;
+    try {
+      // const response = awiat UserStorage
+      return response;
+    } catch (err){
+      return { success: false, msg: err };
+    }
+  }
 }
 
 module.exports = User;

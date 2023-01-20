@@ -10,6 +10,9 @@ const output = {
   register: (req, res) => {
     res.render("home/register");
   },
+  fileUpload: (req, res) => {
+    res.render("home/fileUpload");
+  },
 };
 const process = {
   login: async (req, res) => {
@@ -20,6 +23,11 @@ const process = {
   register: async (req, res) => {
     const user = new User(req.body);
     const response = await user.register();
+    return res.json(response);
+  },
+  fileUpload: async (req, res) => {
+    const user = new User(req.body);
+    const response = await user.fileUpload();
     return res.json(response);
   },
 };
