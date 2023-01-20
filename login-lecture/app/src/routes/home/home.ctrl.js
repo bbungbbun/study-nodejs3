@@ -11,7 +11,7 @@ const output = {
     res.render("home/register");
   },
   fileUpload: (req, res) => {
-    res.render("home/fileUpload");
+    res.render(`home/fileUpload`);
   },
 };
 const process = {
