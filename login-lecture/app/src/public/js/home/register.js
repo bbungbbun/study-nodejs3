@@ -16,6 +16,7 @@ function register() {
     name: name.value,
     psword: psword.value,
   };
+
   fetch("/register", {
     method: "POST",
     headers: {
@@ -32,6 +33,6 @@ function register() {
       }
     })
     .catch((err) => {
-      console.error("회원가입 중 에러 발생");
+      throw new Error(`회원가입 중 에러 발생`);
     });
 }
