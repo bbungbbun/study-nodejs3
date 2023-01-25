@@ -1,6 +1,7 @@
 "use strict";
 const { response } = require("express");
 const UserStorage = require("./UserStorage");
+const pictureStorage = require("./pictureStorage");
 class User {
   constructor(body) {
     this.body = body;
@@ -30,7 +31,7 @@ class User {
   async fileUpload(){
     const client = this.body;
     try {
-      // const response = awiat UserStorage
+      const response = await pictureStorage.save(client);
       return response;
     } catch (err){
       return { success: false, msg: err };

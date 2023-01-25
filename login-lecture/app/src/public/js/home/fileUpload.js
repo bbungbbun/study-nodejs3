@@ -8,7 +8,7 @@ let one = false
 
 function dropHandler(evt) {
   console.log('File(s) dropped');
-  conFile.classList.remove('drop')
+  conFile.classList.remove('drop');
 }
 
 function dragOverHandler(evt) {
@@ -17,25 +17,27 @@ function dragOverHandler(evt) {
 }
 
 function dragLeave(evt) {
-  conFile.classList.remove('drop')
+  conFile.classList.remove('drop');
 }
 
 function dragEnter(evt) {
-  conFile.classList.add('drop')
+  conFile.classList.add('drop');
 }
+
 
 function processFile (event) {
   function getBase64 (file) {
-    const reader = new FileReader()
+    const reader = new FileReader();
     reader.readAsDataURL(file)
     reader.onload = function () {
-      imgFile.src = reader.result
-      conFile.classList.add('hasFile')
+      fileUpload(reader.result);
+      imgFile.src = reader.result;
+      conFile.classList.add('hasFile');
     }
   }
 
-  const file = event.target.files[0]
-  getBase64(file)
+  const file = event.target.files[0];
+  getBase64(file);
 }
 
 function handleClickRemove() {
@@ -43,6 +45,34 @@ function handleClickRemove() {
   setTimeout(() => {
     imgFile.src = ''
   }, 250);
-  input.type = 'text'
-  input.type = 'file'
+  input.type = 'text';
+  input.type = 'file';
+}
+
+"use strict";
+const file = document.querySelector("#file");
+
+function fileUpload(fileUrl) {
+  const req = {
+    name: file.value,
+    url: fileUrl,
+  };
+  fetch("/fileUpload", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(req),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.success) {
+        location.href = "/fileUpload";
+      } else {
+        alert(res.msg);
+      }
+    })
+    .catch((err) => {
+      throw new Error(`파일 업로드 중 에러 발생`);
+    });
 }
