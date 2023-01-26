@@ -13,6 +13,9 @@ const output = {
   fileUpload: (req, res) => {
     res.render(`home/fileUpload`);
   },
+  fileUpload2: (req, res) => {
+    res.render(`home/fileUpload2`);
+  },
 };
 const process = {
   login: async (req, res) => {
@@ -28,6 +31,11 @@ const process = {
   fileUpload: async (req, res) => {
     const user = new User(req.body);
     const response = await user.fileUpload();
+    return res.json(response);
+  },
+  fileUpload2: async (req, res) => {
+    const user = new User(req.body);
+    const response = await user.fileUpload2();
     return res.json(response);
   },
 };

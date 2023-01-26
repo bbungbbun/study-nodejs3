@@ -1,3 +1,5 @@
+// Copyright (c) 2023 by luisdanielroviracontreras (https://codepen.io/luisdanielroviracontreras/pen/LYNGqMy)
+
 const conFile = document.querySelector('.con-input-file')
 const img1 = document.querySelector('.img-1')
 const img2 = document.querySelector('.img-2')

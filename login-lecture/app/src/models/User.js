@@ -2,6 +2,8 @@
 const { response } = require("express");
 const UserStorage = require("./UserStorage");
 const pictureStorage = require("./pictureStorage");
+const fileStorage = require("./fileStorage");
+
 class User {
   constructor(body) {
     this.body = body;
@@ -32,6 +34,15 @@ class User {
     const client = this.body;
     try {
       const response = await pictureStorage.save(client);
+      return response;
+    } catch (err){
+      return { success: false, msg: err };
+    }
+  }
+  async fileUpload2(){
+    const client = this.body;
+    try {
+      const response = await fileStorage.save(client);
       return response;
     } catch (err){
       return { success: false, msg: err };
