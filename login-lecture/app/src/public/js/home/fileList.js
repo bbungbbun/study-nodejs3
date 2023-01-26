@@ -1,3 +1,5 @@
+// Copyright (c) 2023 by Mert Cukuren (https://codepen.io/knyttneve/pen/JjjqLJQ)
+
 const droppable = document.querySelector(".droppable");
 const list = document.querySelector(".list");
 const ball = document.querySelector(".ball");
