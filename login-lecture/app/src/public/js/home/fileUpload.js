@@ -67,7 +67,7 @@ function fileUpload(fileUrl) {
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        location.href = "/fileUpload";
+        console.log("파일이 업로드 되었습니다.");
       } else {
         alert(res.msg);
       }
