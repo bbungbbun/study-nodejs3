@@ -85,6 +85,7 @@ function processFile (event) {
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onload = function () {
+      fileUpload(reader.result); // file DB에 저장
       imgFile.src = reader.result
       conFile.classList.add('hasFile')
     }
