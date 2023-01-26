@@ -78,10 +78,6 @@ list.addEventListener("drop", e => {
     sadly++;
     if (sadly > 1) return;
     itemMarkup(files[0], reader.result, offsetX, offsetY);
-    console.log('files[0]',files[0]);
-    console.log('reader.result',reader.result);
-    console.log('offsetX',offsetX);
-    console.log('offsetY',offsetY);
   });
 
   droppable.classList.remove("is-over");
