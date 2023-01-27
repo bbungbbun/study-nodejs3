@@ -15,6 +15,7 @@
 
 # swagger
 swagger를 통해 프로젝트의 api문서를 작성해보았다.
+- `/api-docs` 
 
 ## 참고자료
 - [swagger 공식 홈페이지](https://swagger.io/)
