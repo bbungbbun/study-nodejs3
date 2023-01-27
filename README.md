@@ -12,3 +12,12 @@
 강의를 시청하며 `nodejs`의 사용법을 익히고 이를 응용하여 다른 예제를 추가로 제작해보았다.
 - `/fileUpload` -> drag and drop file upload (ver.1)
 - `/fileUpload2` -> drag and drop file upload (ver.2)
+
+# swagger
+swagger를 통해 프로젝트의 api문서를 작성해보았다.
+
+## 참고자료
+- [swagger 공식 홈페이지](https://swagger.io/)
+- [Swagger를 활용한 API 명세와 개발 협업](https://youtube.com/playlist?list=PLRx0vPvlEmdAezo0wkmUdT6WBCch0_1ie)
+- [Automatic Swagger Documentation with Node & Express](https://youtu.be/eiSem0cqaN0)
+  - [소스코드](https://github.com/kriscfoster/express-swagger-docs)
