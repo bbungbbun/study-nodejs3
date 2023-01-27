@@ -1,7 +1,6 @@
 "use strict";
 const { response } = require("express");
 const UserStorage = require("./UserStorage");
-const pictureStorage = require("./pictureStorage");
 const fileStorage = require("./fileStorage");
 
 class User {
@@ -33,7 +32,7 @@ class User {
   async fileUpload(){
     const client = this.body;
     try {
-      const response = await pictureStorage.save(client);
+      const response = await fileStorage.save1(client);
       return response;
     } catch (err){
       return { success: false, msg: err };
@@ -42,7 +41,7 @@ class User {
   async fileUpload2(){
     const client = this.body;
     try {
-      const response = await fileStorage.save(client);
+      const response = await fileStorage.save2(client);
       return response;
     } catch (err){
       return { success: false, msg: err };
