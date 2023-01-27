@@ -71,5 +71,49 @@
  *     responses:
  *       201:
  *         description: Created
+ * /fileUpload:
+ *   post:
+ *     description: 파일의 정보를 등록한다.
+ *     parameters:
+ *      - name: name
+ *        description: 파일명
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: url
+ *        description: base64로 인코딩된 파일주소
+ *        in: formData
+ *        required: true
+ *        type: string
+ *     responses:
+ *       201:
+ *         description: Created
+ * /fileUpload2:
+ *   post:
+ *     description: 파일의 정보를 등록한다.
+ *     parameters:
+ *      - name: id
+ *        description: 파일의 고유 id
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: name
+ *        description: 파일명
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: url
+ *        description: base64로 인코딩된 파일주소
+ *        in: formData
+ *        required: true
+ *        type: string
+ *      - name: size
+ *        description: 파일의 사이즈
+ *        in: formData
+ *        required: true
+ *        type: string
+ *     responses:
+ *       201:
+ *         description: Created
  */
 
